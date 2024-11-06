@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { deleteTask } from '../controllers/tasksSlice';
 import { useNavigation } from '@react-navigation/native';
 
-const Task = ({ task }) => {
+const Task = React.memo(({ task }) => {
   const dispatch = useDispatch();
   const isOverdue = new Date(task.dueDate) < new Date() && task.status === 'Pending';
   const navigation = useNavigation();
@@ -31,10 +31,10 @@ const Task = ({ task }) => {
       </View>
     </TouchableOpacity>
   );
-};
+});
 
 const handleDelete = (dispatch, taskId: any) => {
-  Alert.alert('Delete Tast', 'Are you sure?', [
+  Alert.alert('Delete Task', 'Are you sure?', [
     {
       text: 'Yes',
       onPress: () => dispatch(deleteTask(taskId)),

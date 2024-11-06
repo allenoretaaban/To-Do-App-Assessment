@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { View, TextInput, Button, Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../controllers/tasksSlice';
@@ -13,6 +13,7 @@ const AddTaskScreen = ({ navigation }) => {
   const [dueDate, setDueDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [dueDateTitle, setDueDateTitle] = useState('Select Due Date');
+  const descriptionInput = useRef(null);
 
   const handleSaveTask = () => {
     if (title.trim() && description.trim()) {
@@ -44,8 +45,10 @@ const AddTaskScreen = ({ navigation }) => {
         value={title}
         onChangeText={setTitle}
         placeholderTextColor="#A9A9A9"
+        onSubmitEditing={() => descriptionInput.current?.focus()}
       />
       <TextInput
+        ref={descriptionInput}
         style={styles.inputText}
         placeholder="Task Description"
         value={description}
