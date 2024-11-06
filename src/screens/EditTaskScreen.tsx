@@ -22,7 +22,7 @@ const EditTaskScreen = ({ route, navigation }) => {
   const handleUpdateTask = () => {
     if (title.trim() && description.trim()) {
       let formattedDueDate = new Date(dueDate).getTime();
-      let newStatus = new Date(dueDate) < new Date() ? 'Pending' : 'On-going';
+      let newStatus = new Date(dueDate) < new Date() ? 'Pending' : 'In Progress';
       dispatch(editTask({ id: taskId, title: title, description: description, status: newStatus, dueDate: formattedDueDate, displayDueDate: dueDateTitle }));
       navigation.goBack();
     } else {
