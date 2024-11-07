@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from "react-native";
+import { View } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import { useSelector } from 'react-redux';
 import TaskList from '../components/TaskList';

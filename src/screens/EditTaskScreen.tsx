@@ -17,7 +17,6 @@ const EditTaskScreen = ({ route, navigation }) => {
   const [dueDate, setDueDate] = useState(new Date(task?.dueDate) || new Date());
   const [open, setOpen] = useState(false);
   const [dueDateTitle, setDueDateTitle] = useState(task?.displayDueDate);
-  const [status, setStatus] = useState(task?.status || '');
 
   const handleUpdateTask = () => {
     if (title.trim() && description.trim()) {
