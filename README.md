@@ -45,3 +45,15 @@ npx react-native start
 
 ## Step 3: To run the app on an Android emulator or a physical device: (since it is tested in Android)
 npx react-native run-android or npm run android
+
+1. State Management
+I chose Redux for state management because it centralizes application data and provides a predictable state container. Redux's straightforward action/reducer model works well here and supports scalability by enabling the addition of more actions and reducers as the application grows. To scale for a larger app, I would modularize state into feature slices, following the Redux Toolkit's structure, and use Redux middleware (Thunk) to manage asynchronous tasks.
+
+2. Performance Optimization
+To optimize performance, I used React.memo to prevent unnecessary re-renders in components like Task, which only updates when its props change. Additionally, I used FlatList for efficient rendering of the task list, leveraging its lazy loading and virtualization to handle large data efficiently.
+
+3. Testing Strategy
+I focus on unit testing critical parts of the application, such as action creators, reducers, and utility functions, because they contain the business logic. Guidelines include testing logic-heavy components and ensuring that all actions produce expected state changes. For UI testing, I use snapshot tests to validate component rendering.
+
+4. Code Structure
+The project structure separates screens, components, and helpers for clarity and maintainability. screens handle navigation and state retrieval, components are reusable UI elements, and helpers manage shared styles and the Redux store. This separation promotes modularity and simplifies debugging.
