@@ -1,6 +1,6 @@
 This code is for a React Native "To Do" application using Redux for state management, React Navigation for screen transitions, and components to organize and display tasks. The app has the following main functionalities:
 
-Core Components and Structure
+# Core Components and Structure
 
 1. App.tsx: Sets up the Redux store, configures navigation with a stack navigator, and provides navigation between three main screens:
 - HomeScreen: Main task list with options to filter, search, and add tasks.
@@ -21,21 +21,21 @@ Core Components and Structure
 - Uses handleUpdateTask to update task details in the Redux store.
 - handleSetCompleted dispatches a status change to "Completed".
 
-Components
+# Components
 
 1. Task.tsx: Displays individual task details and allows for long-press deletion, with overdue styling for pending tasks past their due date.
 2. TaskList.tsx: Lists tasks using a FlatList, with a message if no tasks are found.
 3. TaskButton.tsx: Custom button component used across screens for various actions.
 4. FilterBar.tsx: Contains filter buttons for viewing tasks by status (e.g., "Pending").
 
-Additional Notes
+# Additional Notes
 
 1. The task's due date and status are managed in AddTaskScreen and EditTaskScreen.
 2. TaskList and Task components improve app performance by rendering only the necessary parts.
 3. Redux actions for adding, editing, updating status, and deleting tasks are managed by tasksSlice.
 4. This setup provides a flexible, responsive to-do app with task management, status updates, and search/filtering capabilities. Let me know if you'd like any specific improvements or features added to this code!
 
-Installation
+# Installation
 
 ## Step 1: Install Dependencies
 npm install
