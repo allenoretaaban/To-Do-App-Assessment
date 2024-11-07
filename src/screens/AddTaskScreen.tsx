@@ -17,8 +17,6 @@ const AddTaskScreen = ({ navigation }) => {
 
   const handleSaveTask = () => {
     if (title.trim() && description.trim()) {
-      console.log(dueDate);
-      console.log(new Date(dueDate).getTime());
       const newTask = {
         id: new Date(dueDate).getTime(),
         title,

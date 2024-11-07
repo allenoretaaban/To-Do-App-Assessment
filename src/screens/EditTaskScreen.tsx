@@ -10,7 +10,6 @@ const EditTaskScreen = ({ route, navigation }) => {
   const { taskId } = route.params;
   const dispatch = useDispatch();
   const task = useSelector((state) => state.tasks.tasks.find((task) => task.id === taskId));
-  console.log(task);
 
   const [title, setTitle] = useState(task?.title || '');
   const [description, setDescription] = useState(task?.description || '');
