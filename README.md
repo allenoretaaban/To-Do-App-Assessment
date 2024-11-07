@@ -46,6 +46,8 @@ npx react-native start
 ## Step 3: To run the app on an Android emulator or a physical device: (since it is tested in Android)
 npx react-native run-android or npm run android
 
+# Other Informations
+
 1. State Management
 I chose Redux for state management because it centralizes application data and provides a predictable state container. Redux's straightforward action/reducer model works well here and supports scalability by enabling the addition of more actions and reducers as the application grows. To scale for a larger app, I would modularize state into feature slices, following the Redux Toolkit's structure, and use Redux middleware (Thunk) to manage asynchronous tasks.
 
